@@ -20,7 +20,7 @@
       become: yes
     - name: "synchronize repository"
       git:
-        repo: http://gitlab.kni.uek.krakow.pl/wpc/upload-web-interface.git
+        repo: http://github.com/rjachymiak/RJ_WPC/photoAlbumUi.git
         dest: ~/photoAlbumUi
         accept_hostkey: true
 
@@ -36,7 +36,7 @@
       become: yes
     - name: "synchronize repository"
       git:
-        repo: http://gitlab.kni.uek.krakow.pl/wpc/upload-web-interface.git
+        repo: http://github.com/rjachymiak/RJ_WPC/photoAlbumUi.git
         dest: ~/photoAlbumUi
         accept_hostkey: true
 
@@ -60,6 +60,6 @@
       become: yes
     - name: "synchronize repository"
       git:
-        repo: http://gitlab.kni.uek.krakow.pl/wpc/pdf-creator.git
+        repo: http://github.com/rjachymiak/RJ_WPC/photoAlbumCreator.git
         dest: ~/photoAlbumCreator
         accept_hostkey: true
