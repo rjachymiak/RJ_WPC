@@ -14,7 +14,7 @@ def upload_s3(source_file, filename):
 
 sqs = boto3.resource('sqs')
 albumRequests = sqs.get_queue_by_name(QueueName='jachymiakr-album')
-bucket_address = 'https://s3.eu-central-1.amazonaws.com/153412-kkanclerz'
+bucket_address = 'https://s3.eu-central-1.amazonaws.com/166819-rjachymiak'
 
 while True:
   for albumRequest in albumRequests.receive_messages():
