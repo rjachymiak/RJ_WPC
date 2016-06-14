@@ -44,7 +44,7 @@ def request_album_creation():
   return jsonify()
 
 def upload_s3(source_file, destination_filename):
-  bucket_name = '153412-kkanclerz'
+  bucket_name = '166819-rjachymiak'
   s3 = boto3.resource('s3')
   bucket = s3.Bucket(bucket_name)
   bucket.put_object(Key=destination_filename, Body=source_file, ACL='public-read')

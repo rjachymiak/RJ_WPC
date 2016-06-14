@@ -1,135 +1,25 @@
 <html>
  <head>
-  <title>Album</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
   <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
-  <meta name="author" content="Paulina Dudek, Joanna Okrajni, Rafał Jachymiak"/>
-
-
-  <style>
-  .jumbotron {
-    margin-top:  5px;
-    margin-bottom:  5px;
-    background-image: url(3.jpg);
-    background-position: 50% 50%;
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: white;
-    text-shadow: 0 0 15px black, 0 0 30px black;
-    font-family: "Georgia", serif; 
-    opacity: 0.8;
-    }
-    
-    .container{ 
-    font-family: "Georgia", serif;
-    padding: 20px 120px;
-    }
-
-    .jumbotron2{ 
-    font-family: "Georgia", serif;
-    padding: 80px 200px;
-    background-image: url(tekstura.jpg);
-    background-position: 60% 50%;
-    background-size: cover;
-    color: black;
-    text-shadow: 0 0 10px white;
-    font-family: "Georgia", serif; 
-    }
-
-    .footer {
-    font-family: "Georgia", serif;
-    }
-
-    p.oblique {
-    font-style: oblique;
-    }
-
-    .person {
-    border: 15px solid transparent;
-    margin-bottom: 25px;
-    width: 100%;
-    height: 50%;
-    opacity: 0.9;
-    }
-    .person:hover {
-    border-color: #f1f1f1;
-    }
-
-  </style>
-
   </head>
-
-
  <body>
-
-
-
-  <div class="jumbotron text-center" style="height: 460px;">
-       <h1>Stwórz swój własny album!</h1>      
-       <p class="oblique">to całkiem proste</p>
+  <h1>Here you can create your own album</h1>
+  <div class="dropzone" id="dropzoneForm">
   </div>
-
- <hr>
-
-  <div class="container text-center">
-      <div class="dropzone" id="dropzoneForm">
-      </div><br>
-      <form class="requestAlbumForm" action="{{url_for('request_album_creation')}}" method="POST">
-      <input name="email" type="text"/>
-      <button type="submit" class="btn btn-default btn-sm">Stwórz album</button>
-      </form>
-  </div>
-
-<hr>
-  <div class="jumbotron2 text-center"><br>
-  <div class="row">
-  <div class="col-sm-4">
-    <p class="text-center"><strong>Paulina Dudek</strong></p><br>
-    <a href="#demo" data-toggle="collapse">
-      <img src="paulina.jpg" class="img-circle person" alt="Paulina Dudek">
-    </a>
-    <div id="demo" class="collapse">
-      <p>Numer albumu - 166497</p>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <p class="text-center"><strong>Joanna Okrajni</strong></p><br>
-    <a href="#demo2" data-toggle="collapse">
-      <img src="joanna.jpg" class="img-circle person" alt="Joanna Okrajni">
-    </a>
-    <div id="demo2" class="collapse">
-      <p>Numer albumu - 167756</p>
-    </div>
-  </div>
-  <div class="col-sm-4">
-    <p class="text-center"><strong>Rafał Jachymiak</strong></p><br>
-    <a href="#demo3" data-toggle="collapse">
-      <img src="rafal.jpg" class="img-circle person" alt="Rafał Jachymiak">
-    </a>
-    <div id="demo3" class="collapse">
-      <p>Numer albumu - 166819</p>
-    </div>
-  </div>
-</div>
-</div>
-<hr>
-<footer><p class="text-center">Uniwersytet Ekonomiczny w Krakowie 2016</p></footer>
- </body>
-
-
-<script type="text/javascript">
+  <form class="requestAlbumForm" action="{{url_for('request_album_creation')}}" method="POST">
+     <input name="email" type="text"/>
+     <button type="submit">Create Album</button>
+  </form>
+  <script type="text/javascript">
    var createInput = function(count, path) {
-         var input = '<input type="hidden" class="photo" name="photos___number__" value="__value__"/>"'
+       	 var input = '<input type="hidden" class="photo" name="photos___number__" value="__value__"/>"'
          input = input.replace('__number__', count);
          input = input.replace('__value__',  path);
          console.log(input)
-         return input;
+
+       	 return	input;
        }
    $(".dropzone").dropzone({
      maxFiles: 2000,
@@ -146,5 +36,5 @@
      }
    });
   </script>
-
+ </body>
 </html>

@@ -5,7 +5,7 @@ from creator import create
 
 s3 = boto3.resource('s3')
 def upload_s3(source_file, filename):
-  bucket_name = '153412-kkanclerz'
+  bucket_name = '166819-rjachymiak'
   destination_filename = "albums/%s/%s" % (uuid4().hex, filename)
   print destination_filename
   bucket = s3.Bucket(bucket_name)
@@ -13,7 +13,7 @@ def upload_s3(source_file, filename):
   return destination_filename
 
 sqs = boto3.resource('sqs')
-albumRequests = sqs.get_queue_by_name(QueueName='kanclerj-album')
+albumRequests = sqs.get_queue_by_name(QueueName='jachymiakr-album')
 bucket_address = 'https://s3.eu-central-1.amazonaws.com/153412-kkanclerz'
 
 while True:
